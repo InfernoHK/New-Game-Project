@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvioomy2wb7pf"]
+
+[ext_resource type="Script" path="res://Scripts/poke_boy.gd" id="1_3cksq"]
+[ext_resource type="Texture2D" uid="uid://bkhkt7fb6vnwm" path="res://Assests/AjFP5.png" id="1_i35lp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvbw5"]
+radius = 15.0
+height = 50.0
+
+[node name="poke-boy" type="CharacterBody2D"]
+script = ExtResource("1_3cksq")
+
+[node name="AjFp5" type="Sprite2D" parent="."]
+position = Vector2(1, -8)
+texture = ExtResource("1_i35lp")
+hframes = 4
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_gvbw5")

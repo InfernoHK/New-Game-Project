@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://be7p2ioqvi6b3"]
+
+[ext_resource type="Texture2D" uid="uid://cxsqbv8oaxwfk" path="res://Assests/images-removebg-preview.png" id="1_ax1ol"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aern7"]
+texture = ExtResource("1_ax1ol")
+4:3/size_in_atlas = Vector2i(7, 3)
+4:3/0 = 0
+1:7/size_in_atlas = Vector2i(13, 4)
+1:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pxqfc"]
+sources/0 = SubResource("TileSetAtlasSource_aern7")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hynvg"]
+size = Vector2(97, 38)
+
+[node name="Platform" type="TileMap"]
+tile_set = SubResource("TileSet_pxqfc")
+format = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 6)
+shape = SubResource("RectangleShape2D_hynvg")
