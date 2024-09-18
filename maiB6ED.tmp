@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://d4kw76heiisqi"]
+[gd_scene load_steps=7 format=4 uid="uid://d4kw76heiisqi"]
 
 [ext_resource type="Texture2D" uid="uid://cxsqbv8oaxwfk" path="res://Assests/images-removebg-preview.png" id="1_1voee"]
-[ext_resource type="Script" path="res://Global.gd" id="1_ttdw7"]
+[ext_resource type="Script" path="res://Scripts/global.gd" id="1_axv6w"]
 [ext_resource type="PackedScene" uid="uid://cvioomy2wb7pf" path="res://Obj's/poke_boy.tscn" id="2_4hcck"]
 [ext_resource type="PackedScene" uid="uid://5hn7t2xj8hcv" path="res://Obj's/poke_ball.tscn" id="3_fk3g3"]
-[ext_resource type="Script" path="res://label.gd" id="5_6safh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qjxk5"]
 texture = ExtResource("1_1voee")
@@ -19,10 +18,8 @@ texture = ExtResource("1_1voee")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_qjxk5")
 
-[sub_resource type="LabelSettings" id="LabelSettings_rne2v"]
-
 [node name="MainScene" type="Node2D"]
-script = ExtResource("1_ttdw7")
+script = ExtResource("1_axv6w")
 
 [node name="Poke-ball" parent="." instance=ExtResource("3_fk3g3")]
 position = Vector2(625, 186)
@@ -46,26 +43,3 @@ tile_set = SubResource("TileSet_6jyx6")
 
 [node name="poke-boy" parent="." instance=ExtResource("2_4hcck")]
 position = Vector2(401, 189)
-
-[node name="Camera2D" type="Camera2D" parent="poke-boy"]
-position = Vector2(1, -7)
-zoom = Vector2(2, 2)
-limit_left = 0
-limit_top = 0
-
-[node name="Control" type="Control" parent="poke-boy/Camera2D"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -12.0
-offset_top = -48.0
-offset_right = 15.0
-offset_bottom = -24.0
-
-[node name="Label" type="Label" parent="poke-boy/Camera2D/Control"]
-layout_mode = 0
-offset_left = -26.0
-offset_top = -12.0
-offset_right = 32.0
-offset_bottom = 11.0
-label_settings = SubResource("LabelSettings_rne2v")
-script = ExtResource("5_6safh")

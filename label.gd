@@ -1,11 +1,11 @@
-extends Node2D
+extends Label
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _ready():
+	self.text = str(Global.score)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(delta):
+	self.text = "Score" +  str(Global.score)
